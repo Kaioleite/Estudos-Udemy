@@ -1,4 +1,4 @@
-package com.example.classeemetodos;
+package com.example.classeemetodos.classes;
 
 class Cao extends Animal{
 

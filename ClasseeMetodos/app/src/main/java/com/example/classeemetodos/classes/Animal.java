@@ -1,9 +1,9 @@
-package com.example.classeemetodos;
+package com.example.classeemetodos.classes;
 
-class Animal {
-    int tamanho;
-    String cor ;
-    double peso;
+ public class Animal {
+      protected int tamanho;
+      protected String cor ;
+      protected double peso;
 
     /*
          Getter (Recuperar o valor de uma Propriedade)
