@@ -13,7 +13,25 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Obama obama = new Obama();
+        obama.direitosDeveres();
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //(Instanciando Construtor)ContaBancaria conta = new ContaBancaria();
 
        /*
         Conta conta = new Conta();
