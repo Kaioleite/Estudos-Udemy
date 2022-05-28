@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -15,27 +16,68 @@ public class MainActivity extends AppCompatActivity {
     private TextInputEditText campoEmail;
     private TextView textResultado;
 
+    private CheckBox checkVerde, checkBranco, checkVermelho;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
     // Criamos Acesso para toda parte do Código
-        campoNome = findViewById(R.id.editNome);
-        campoEmail = findViewById(R.id.editEmail);
-        textResultado = findViewById(R.id.textResultado);
+        campoNome      = findViewById(R.id.editNome);
+        campoEmail     = findViewById(R.id.editEmail);
+        textResultado  = findViewById(R.id.textResultado);
+
+    //CheckBox - Acessando de toda parte do código
+        checkVerde     = findViewById(R.id.checkVerde);
+        checkBranco    = findViewById(R.id.checkBranco);
+        checkVermelho  = findViewById(R.id.checkVermelho);
+
 
       }
+     public void checkBox(){
 
-  // Criamos um Método que ao clicar no botão recupera os dados e guarda na caixa de Resultado.
+        String texto = "";
+        // checkBox - Recuperando caixa Selecionada [x]
+        if(checkVerde.isChecked()){
+
+            /*String corSelecionada = checkVerde.getText().toString();
+            texto = corSelecionada;
+             */
+            texto = "Verde selecionado - ";
+
+        }
+
+         if(checkBranco.isChecked()){
+             texto = texto + "Branco selecionado - ";
+
+         }
+
+         if(checkVermelho.isChecked()){
+             texto = texto + "Vermelho selecionado - ";
+
+         }
+
+        textResultado.setText(texto);
+
+
+
+     }
+  //enviar - Criamos um Método que ao clicar no botão recupera os dados e guarda na caixa de Resultado.
     public void enviar(View view){
+        // Método CheckBox chamado no botão enviar
+        checkBox();
 
+
+      /*
         String nome = campoNome.getText().toString();
         String Email = campoEmail.getText().toString();
         textResultado.setText("nome: "+ nome +"  email: " + Email);
+       */
    }
-   /* Criamos um método no botão limpar para que ele apague
+   /* limpar - Criamos um método no botão limpar para que ele apague
        o que foi digitado dentro da caixa de texto */
+
      public void limpar(View view){
 
           campoNome.setText("");
